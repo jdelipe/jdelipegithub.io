@@ -1,0 +1,141 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: rgb(2, 2, 56);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 40%;
+    background-color: transparent;
+    position: relative;
+}
+
+#mybtn {
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#mybtn:hover {
+    opacity: 0.8;
+}
+
+.heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(114, 23, 31);
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: 10px -10px 70px rgb(255, 0, 21);
+    animation: scale 3s infinite linear;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(114, 23, 31);
+    border-radius: 50px;
+}
+
+.heart::before {
+    top: -50%;
+}
+
+.heart::after {
+    right: -50%;
+}
+
+
+
+.heart-text {
+    position: absolute;
+    transform: rotate(45deg);
+    color: white;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    top: 15%;
+    left: 15%;
+    font-family: Space Grotesk;
+}
+
+@keyframes scale {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.25); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
+
+.option-btn {
+    padding: 10px 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20%;
+    
+}
+
+.option-btn:hover {
+    opacity: 0.8;
+}
+
+.option-btn:focus {
+    outline: none;
+}
+
+.tittleh1 {
+    color: white;
+    font-family: Space Grotesk;
+
+}
+
+/* Fireworks effect */
+.fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: -1; /* Behind other elements */
+}
+
+.firework {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    animation: explode 3s ease-out forwards;
+}
+
+@keyframes explode {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(50);
+        opacity: 0;
+    }
+}
